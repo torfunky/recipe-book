@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Recipe Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>a</h1>
+        <nav>
+          <ul>
+            <li><a href="#" class="active" id="home-nav">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="filters">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search recipes..."
+            />
+          </div>
+          <div class="tag-filters">
+            <button class="tag-filter active" data-tag="all">All</button>
+            <!-- Tag filters will be populated dynamically -->
+          </div>
+        </section>
+
+        <section class="recipes-grid" id="recipes-container">
+          <!-- Recipe cards will be populated here -->
+        </section>
+
+        <!-- Recipe Detail View -->
+        <section id="recipe-detail" class="recipe-detail" style="display: none">
+          <button id="back-to-recipes" class="back-btn">
+            ← Back to Recipes
+          </button>
+          <div class="recipe-detail-content">
+            <!-- Recipe detail content will be populated here -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
