@@ -1,22 +1,17 @@
-/* Google Fonts import */
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gamja+Flower&display=swap");
 
-/* Custom Font Declarations */
 @font-face {
   font-family: "Cweyons-Regular";
   src: url("./assets/fonts/Cweyons-Regular.ttf") format("trueType");
 }
 
-/* CSS Variables */
 :root {
-  /* Typography */
   --font-family-primary: "DM Mono", monospace;
   --font-family-header: "Cweyons-Regular", serif;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
 
-  /* Font Sizes */
   --font-size-xs: 0.8rem;
   --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
@@ -26,7 +21,6 @@
   --font-size-3xl: 2rem;
   --font-size-4xl: 3rem;
 
-  /* Color Palette */
   --color-primary: #aabd8c;
   --color-primary-dark: #778e52;
   --color-secondary: #381d2a;
@@ -35,7 +29,6 @@
   --color-warning: #f39c12;
   --color-warning-dark: #db5a42;
 
-  /* Neutral Colors */
   --color-text-primary: #28151e;
   --color-text-secondary: #381d2a;
   --color-text-muted: #432332;
@@ -44,7 +37,6 @@
   --color-text-dark: #0d070a;
   --color-text-darker: #0d070a;
 
-  /* Background Colors */
   --color-bg-primary: #fdf1d8;
   --color-bg-muted: #fef8ec;
 
@@ -60,7 +52,6 @@
     var(--color-warning-dark)
   );
 
-  /* Spacing */
   --spacing-xs: 0.2rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -69,7 +60,6 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
 
-  /* Border Radius */
   --radius-sm: 5px;
   --radius-md: 8px;
   --radius-lg: 10px;
@@ -77,23 +67,19 @@
   --radius-2xl: 20px;
   --radius-full: 50%;
 
-  /* Shadows */
   --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 8px 25px rgba(0, 0, 0, 0.15);
 
-  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 
-  /* Layout */
   --container-max-width: 1200px;
   --content-padding: 20px;
   --grid-gap: 1.5rem;
 
-  /* Z-Index Scale */
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-modal: 1000;
@@ -122,7 +108,8 @@ body {
 /* Header styles */
 header {
   background-color: var(--color-bg-primary);
-  box-shadow: var(--shadow-sm);
+  border-bottom: 2px dashed var(--color-accent);
+  /* box-shadow: var(--shadow-sm); */
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
@@ -226,7 +213,8 @@ nav a.active {
 
 /* Recipe card */
 .recipe-card {
-  background: var(--color-bg-primary);
+  /* border: 2px dashed var(--color-primary-dark); */
+  /* background: var(--color-bg-muted); */
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
@@ -234,23 +222,8 @@ nav a.active {
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: var(--spacing-sm);
 }
-
-.recipe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-}
-/* 
-.recipe-card .recipe-image {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  pointer-events: none;
-  flex: 1;
-} */
 
 .recipe-card .recipe-image img {
   border: 2px dashed var(--color-primary-dark);
@@ -275,6 +248,10 @@ nav a.active {
   padding: var(--spacing-sm);
   pointer-events: none;
   flex: 0 0 auto;
+}
+
+.recipe-content {
+  padding: 2rem;
 }
 
 .recipe-description {
@@ -342,7 +319,7 @@ nav a.active {
   cursor: pointer;
   font-size: var(--font-size-base);
   margin-bottom: var(--spacing-xl);
-  transition: background var(--transition-normal);
+  transition: var(--transition-normal);
 }
 
 .back-btn:hover {
@@ -351,10 +328,9 @@ nav a.active {
 
 .recipe-detail-content {
   background: var(--color-bg-primary);
-  border: 2px dashed var(--color-primary-dark);
+  /* border: 2px dashed var(--color-primary-dark); */
   border-radius: var(--radius-lg);
   overflow: hidden;
-  /* box-shadow: var(--shadow-lg); */
 }
 
 /* Recipe Hero Section */
@@ -429,6 +405,8 @@ nav a.active {
 }
 
 .main-recipe-image {
+  border: 2px dashed var(--color-primary-dark);
+
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -480,11 +458,6 @@ nav a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.recipe-content {
-  padding: 2rem;
-  background: var(--color-bg-primary);
 }
 
 .content-columns {

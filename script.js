@@ -7,8 +7,8 @@ const recipesContainer = document.getElementById("recipes-container");
 const searchInput = document.getElementById("search-input");
 const tagFilters = document.querySelector(".tag-filters");
 const recipeDetail = document.getElementById("recipe-detail");
-const backBtn = document.getElementById("back-to-recipes");
-const homeNav = document.getElementById("home-nav");
+// const backBtn = document.getElementById("back-to-recipes");
+// const homeNav = document.getElementById("home-nav");
 
 // Initialize the app
 document.addEventListener("DOMContentLoaded", async function () {
@@ -23,11 +23,11 @@ function setupEventListeners() {
   searchInput.addEventListener("input", filterRecipes);
 
   // Navigation controls
-  backBtn.addEventListener("click", showHomePage);
-  homeNav.addEventListener("click", function (e) {
-    e.preventDefault();
-    showHomePage();
-  });
+  //   backBtn.addEventListener("click", showHomePage);
+  //   homeNav.addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     showHomePage();
+  //   });
 
   // Tag filter functionality will be added dynamically
 }
