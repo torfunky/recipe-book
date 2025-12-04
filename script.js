@@ -1,56 +1,42 @@
-// Recipe data storage
 let recipes = [];
-let currentView = "home"; // 'home' or 'recipe-detail'
+let currentView = "home";
 
-// DOM elements
 const recipesContainer = document.getElementById("recipes-container");
 const searchInput = document.getElementById("search-input");
 const tagFilters = document.querySelector(".tag-filters");
 const recipeDetail = document.getElementById("recipe-detail");
-// const backBtn = document.getElementById("back-to-recipes");
-// const homeNav = document.getElementById("home-nav");
+const homeNav = document.getElementById("home-nav");
 
-// Initialize the app
 document.addEventListener("DOMContentLoaded", async function () {
   await loadRecipes();
   displayRecipes();
   setupEventListeners();
 });
 
-// Event listeners
 function setupEventListeners() {
-  // Search functionality
   searchInput.addEventListener("input", filterRecipes);
 
-  // Navigation controls
-  //   backBtn.addEventListener("click", showHomePage);
-  //   homeNav.addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     showHomePage();
-  //   });
-
-  // Tag filter functionality will be added dynamically
+  homeNav.addEventListener("click", function (e) {
+    e.preventDefault();
+    showHomePage();
+  });
 }
 
-// Load recipes from JSON file
 async function loadRecipes() {
   try {
     const response = await fetch("./recipes.json");
     recipes = await response.json();
   } catch (error) {
     console.error("Error loading recipes:", error);
-    // Fallback to empty array if JSON file can't be loaded
     recipes = [];
   }
 }
 
-// Display recipes in the grid
 function displayRecipes(recipesToShow = recipes) {
   if (recipesToShow.length === 0) {
     recipesContainer.innerHTML = `
             <div class="empty-state">
-                <h3>No recipes found</h3>
-                <p>Start building your recipe collection by adding your first recipe!</p>
+                <p>No recipes match</p>
             </div>
         `;
     return;
@@ -64,7 +50,7 @@ function displayRecipes(recipesToShow = recipes) {
                 ${
                   recipe.image
                     ? `<img src="./assets/images/${recipe.image}" alt="${recipe.name}" />`
-                    : `<div class="recipe-placeholder">🍽️</div>`
+                    : `<div class="recipe-placeholder"></div>`
                 }
             </div>
             <div class="recipe-content">
@@ -80,10 +66,8 @@ function displayRecipes(recipesToShow = recipes) {
     )
     .join("");
 
-  // Add click event to recipe cards (for future recipe detail view)
   document.querySelectorAll(".recipe-card").forEach((card) => {
     card.addEventListener("click", function (e) {
-      console.log("Recipe card clicked!", this.dataset.recipeId);
       const recipeId = parseInt(this.dataset.recipeId);
       showRecipeDetail(recipeId);
     });
@@ -92,7 +76,6 @@ function displayRecipes(recipesToShow = recipes) {
   updateTagFilters();
 }
 
-// Show recipe detail page
 function showRecipeDetail(recipeId) {
   const recipe = recipes.find((r) => r.id === recipeId);
   if (!recipe) return;
@@ -114,14 +97,12 @@ function showRecipeDetail(recipeId) {
   // Populate recipe detail content
   const detailContent = document.querySelector(".recipe-detail-content");
   detailContent.innerHTML = `
-        <!-- Recipe Hero Section -->
         <section class="recipe-hero">
             <div class="recipe-hero-content">
                 <div class="recipe-info">
                     <h1 class="recipe-title">${recipe.name}</h1>
                     <p class="recipe-description">${recipe.description}</p>
                     
-                    <!-- Recipe Meta (Prep/Cook Time) -->
                     <div class="recipe-meta-grid">
                         ${
                           recipe.prepTime

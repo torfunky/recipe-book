@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Hojicha and Matcha Cookies",
+    "name": "Matcha and Hojicha Cookies",
     "description": "Soft and chewy homemade hojicha cookies",
     "ingredients": [
       { "quantity": "110 g", "item": "butter (softened)" },
@@ -27,7 +27,7 @@
       "Place the prepared cookies in the dridge for at least 30 minutes.",
       "Preheat oven to 355°F and bake the cookies for 12 minutes."
     ],
-    "tags": ["Dessert", "Baking", "Sweet"],
+    "tags": ["Matcha", "Hojicha", "Cookies"],
     "prepTime": 20,
     "cookTime": 12,
     "image": "matchahojichacookies.jpg",
@@ -35,7 +35,7 @@
   },
   {
     "id": 2,
-    "name": "Matcha ",
+    "name": "Matcha and Hojicha Macarons",
     "description": "Soft and chewy homemade matcha cookies.",
     "ingredients": [
       { "quantity": "110 g", "item": "butter (softened)" },
@@ -58,10 +58,10 @@
       "Place the prepared cookies in the dridge for at least 30 minutes.",
       "Preheat oven to 355°F and bake the cookies for 12 minutes."
     ],
-    "tags": ["Dessert", "Baking", "Sweet"],
+    "tags": ["Matcha", "Hojicha"],
     "prepTime": 20,
     "cookTime": 12,
-    "image": "cookieplaceholder.png",
+    "image": "matchamacarons.jpg",
     "images": ["placeholder.jpg", "placeholder2.jpg", "placeholder3.jpg"]
   }
 ]
