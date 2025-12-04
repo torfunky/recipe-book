@@ -3,7 +3,7 @@ let currentView = "home";
 
 const recipesContainer = document.getElementById("recipes-container");
 const searchInput = document.getElementById("search-input");
-const tagFilters = document.querySelector(".tag-filters");
+// const tagFilters = document.querySelector(".tag-filters");
 const recipeDetail = document.getElementById("recipe-detail");
 const homeNav = document.getElementById("home-nav");
 
@@ -73,7 +73,7 @@ function displayRecipes(recipesToShow = recipes) {
     });
   });
 
-  updateTagFilters();
+  // updateTagFilters();
 }
 
 function showRecipeDetail(recipeId) {
